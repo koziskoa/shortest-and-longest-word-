@@ -1,5 +1,3 @@
-from tokenize import Number
-
 def open_load (name):
     """opens .txt file
     - parametr needs name of file e.g. "file.txt"
