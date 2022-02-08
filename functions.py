@@ -15,7 +15,7 @@ def open_load (name):
         print(f"Soubor {name} není programu přístupný.")
         exit()
 
-def is_number (value): # můžu mít ve funkcích stejný název - value
+def is_number (value): 
     """Tries convert value to number
     - if number: returns True
     - if not number: returns False"""
