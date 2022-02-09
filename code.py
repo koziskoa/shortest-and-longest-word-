@@ -9,15 +9,15 @@ text2 = "Popo4catepetl21, tree82. Bautiful 24 5days. "
 
 # defining var
 word=""
-min_length = 100000000
+min_length = 100000
 max_length = 0
 
-#iterating through string Poznámka:  
+#iterating through string  
 for element in text2:
     if separators(element):
         length = len(word)
         if length > max_length:
-            max_length = length
+            max_length = length # the highest number of characters in a word
             max_word = word
         if length < min_length and length > 1:
             min_length = length
@@ -35,8 +35,8 @@ if length > max_length:
 if length < min_length and length > 1:
     min_length = length
     min_word = word
-print(f"The longest word in the string: {max_word.lower()} (length: {max_length}).\n"
-      f"The shortest word in the string: {min_word.lower()} (length: {min_length}).")
+#print(f"The longest word in the string: {max_word.lower()} (length: {max_length}).\n"
+#      f"The shortest word in the string: {min_word.lower()} (length: {min_length}).")
 
 """comment CZ:
 - když je urpostřed stringu číslo,  tak se nepočítá, ale písmena za číslem se počítají k předchozímu slovu
