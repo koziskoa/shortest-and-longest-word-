@@ -1,3 +1,6 @@
+"""Shortest and longest word in text
+   - text is given in .txt file (variable text) or as string (variable text2)
+   - difficulty: 4 """
 from functions import open_load, is_number, separators
 
 # opening .txt file and converting to var 
