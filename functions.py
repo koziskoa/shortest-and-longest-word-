@@ -1,16 +1,17 @@
 def open_load (name):
     """opens .txt file
     - parametr needs name of file e.g. "file.txt"
-    - returns content of file as str"""
+    - returns content of file as str
+    - """
     try:
         with open(name, encoding="utf-8") as file:
             reader = file.read()
         return reader
     except FileNotFoundError:
-        print(f"Soubor {name} se nepodařilo najít.")
+        print(f"File {name} not found")
         exit()
     except PermissionError:
-        print(f"Soubor {name} není programu přístupný.")
+        print(f"no permission to the file {name}")
         exit()
 
 def is_number (value): 
@@ -18,7 +19,7 @@ def is_number (value):
     - if number: returns True
     - if not number: returns False"""
     try:
-        value = float(value)
+        value = int(value)
         return(True)
     except ValueError:
         return(False)
@@ -27,9 +28,9 @@ def separators (val):
     """ Finds if value is separator
     - e.g. of separators: . , ? ! – : / " ' "space" etc.
     - if is separator: returns True"""
-    sep = ['-', '.', ',', '?', '!', '–', ':', '/', '"', "'", ' ', '*',
-           '(', ')', '[', ']', '{', '}', '<', '>', '°', '@']
-    for i in sep:
-        if i == val:
+    sep_list = ['-', '.', ',', '?', '!', '–', ':', '/', '"', "'", ' ', '*', '#'
+           '(', ')', '[', ']', '{', '}', '<', '>', '°', '@', '+', ';', '=', '%']
+    for separator in sep_list:
+        if separator == val:
             return(True)
     return(False)
