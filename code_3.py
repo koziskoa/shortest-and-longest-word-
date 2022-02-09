@@ -22,7 +22,7 @@ for element in text2:
         if length > max_length:
             max_length = length
             max_word = word
-        if length < min_length and length > 0.1:
+        if length < min_length and length >= 1:
             min_length = length
             min_word = word
         word = ""
