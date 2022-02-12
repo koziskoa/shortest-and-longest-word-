@@ -1,42 +1,16 @@
 """Shortest and longest word in text
    - text is given in .txt file (variable text) or as string (variable text2)
    - difficulty: 4 """
-from functions import open_load, is_number, separators
+from functions import open_load, min_max_str
 
 # opening .txt file and converting to var 
 text = open_load("testing_file.txt")
 text2 = "Popo4catepetl21, tree82. Bautiful 24 5days. "
 
-# defining var
-word=""
-min_length = 100000
-max_length = 0
+f_words = min_max_str(text)
 
-#iterating through string  
-for element in text2:
-    if separators(element):
-        length = len(word)
-        if length > max_length:
-            max_length = length # the highest number of characters in a word
-            max_word = word
-        if length < min_length and length > 1:
-            min_length = length
-            min_word = word
-        word = ""
-        continue
-    if is_number(element):
-        continue
-    word += element
-
-length = len(word)
-if length > max_length:
-    max_length = length
-    max_word = word
-if length < min_length and length > 1:
-    min_length = length
-    min_word = word
-#print(f"The longest word in the string: {max_word.lower()} (length: {max_length}).\n"
-#      f"The shortest word in the string: {min_word.lower()} (length: {min_length}).")
+print(f"The longest word in the string: {f_words[3].lower()} (length: {f_words[2]}).\n"
+      f"The shortest word in the string: {f_words[1].lower()} (length: {f_words[0]}).")
 
 """comment CZ:
 - když je urpostřed stringu číslo,  tak se nepočítá, ale písmena za číslem se počítají k předchozímu slovu
