@@ -34,3 +34,36 @@ def separators (val):
         if separator == val:
             return(True)
     return(False)
+
+def min_max_str (str):
+    """ Finds the shortest and longest length in string
+    - returns word and length of the shortest word in string
+    - returns word and length of the longest word in string"""
+    data = str
+    word = ""
+    min_length = 100000
+    max_length = 0
+    # iterrating trough string
+    for element in data:
+        if separators(element):
+            length = len(word)
+            if length > max_length:
+                max_length = length # the highest number of characters in a word
+                max_word = word
+            if length < min_length and length > 1:
+                min_length = length
+                min_word = word
+            word = ""
+            continue
+        if is_number(element):
+            continue
+        word += element
+
+    length = len(word)
+    if length > max_length:
+        max_length = length
+        max_word = word
+    if length < min_length and length > 1:
+        min_length = length
+        min_word = word
+    return (min_length, min_word, max_length, max_word)
